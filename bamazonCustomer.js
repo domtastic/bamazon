@@ -14,8 +14,7 @@ let newQuantity;
 function showProducts() {
     // show the products available in the database
     connection.query(
-        'SELECT * FROM `products`',
-        function (err, results) {
+        'SELECT * FROM `products`', function (err, results) {
             for (i = 0; i < results.length; i++) {
                 // only if in stock....
                 if (results[i].stock_quantity > 0) {
@@ -113,8 +112,7 @@ function updateStock() {
             { stock_quantity: newQuantity },
             { item_id: chosenItem.item_id }
         ],
-        function (err, results) {
-            // console.log('Results', results); // results contains rows returned by server
+        (err) => {
             if (err) { console.log(err); }
         }
     )
