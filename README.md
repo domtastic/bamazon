@@ -3,32 +3,36 @@ MySQL/Node store
 
 # bamazon Store Node App
 
-##OVERVIEW
+## OVERVIEW
+
 *bamazon* is a node application that allows the user to be a customer, manager, or supervisor to manipulate product and department data in a MySQL database. The bamazon database is contains two tables, *products* and *departments*, with respective column names of item_id, product_name, product_sales, department_name, price, stock_quantity, AND department_id, department_name, and over_head_costs.
  
-##REQUIREMENTS
+## REQUIREMENTS
 * latest version on node
 * npm install
 * MySQL Database *bamazon* with tables *products* and *departments*
-	1. The *products* table should have each of the following columns:
+	1. The ‘products’ table should have each of the following columns:
 		* item_id (unique id for each product)
 		* product_name (Name of product)
 		* department_name
 		* price (cost to customer)
 		* stock_quantity(how much of the product is available in stores)
 		* product_sales (how much $ made from specific item)
-	1. The *departments* table should include the following columns:
+	1. The ‘departments’ table should include the following columns:
 		* department_id
 		* department_name
 		* over_head_costs  (A dummy number you set for each department)
 
-##FUNCTIONALITY
-##Customer View
-The customer application allows a user to “purchase” items available in the bamazon store.  The user is shown a table of all products (name), ID, and price, and then prompted to choose the ID of the product desired, and quantity to purchase. The user is notified of an incorrect ID or insufficient stock to fulfill order. Then the total cost is calculated and the user is then asked to confirm purchase. After the purchase is confirmed, or not, they are asked if they would like to buy anything else. If yes, then they will go through he same process, otherwise they will be thanked and exited from the application.
+## FUNCTIONALITY
+
+## Customer View
+
+The customer application allows a user to “purchase” items available in the bamazon store.  The user is shown a table of all ‘products (name)’, ‘ID’, and ‘price’, and then prompted to choose the ID of the product desired, and quantity to purchase. The user is notified of an incorrect ID or insufficient stock to fulfill order. Then the total cost is calculated and the user is then asked to confirm purchase. After the purchase is confirmed, or not, they are asked if they would like to buy anything else. If yes, then they will go through he same process, otherwise they will be thanked and exited from the application.
 
 ![Customer Image](/readmeImages/customerImage.png)
 
-##Manager View
+## Manager View
+
 The manager application provides options for the user to:
     * View Products for Sale
     * View Low Inventory
@@ -52,7 +56,7 @@ If a manager selects `Add New Product`, it allows the manager to add a completel
 
 ![Manager Add Product](/readmeImages/managerAddProduct.png)
 
-##Supervisor View
+## Supervisor View
 The supervisor application will first will list a set of menu options:
    * View Product Sales by Department
    * Create New Department
@@ -65,17 +69,20 @@ If a supervisor selects ‘Create New Department’, it allows the manager to ad
 
 ![Supervisor View Add Department](/readmeImages/supervisorAddDepartment.png)
 
-##BUILT WITH
-*node
-*MySQL
-*JavaScript
+## BUILT WITH
+
+* node
+* MySQL
+* JavaScript
 
 ##CONTRIBUTING
-*GUI interface
-*user authentication
-* refactor code to have a cart with all products at checkout instead of completing order for each product
-*Any other awesome ideas
 
-##Contributors
+* GUI interface
+* user authentication
+* refactor code to have a cart with all products at checkout instead of completing order for each product
+* Any other awesome ideas
+
+## Contributors
+
 Dominic Gonzalez-Padron
 
