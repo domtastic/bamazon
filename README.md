@@ -25,13 +25,13 @@ MySQL/Node store
 
 ## FUNCTIONALITY
 
-## Customer View
+### Customer View
 
 The customer application allows a user to “purchase” items available in the bamazon store.  The user is shown a table of all ‘products (name)’, ‘ID’, and ‘price’, and then prompted to choose the ID of the product desired, and quantity to purchase. The user is notified of an incorrect ID or insufficient stock to fulfill order. Then the total cost is calculated and the user is then asked to confirm purchase. After the purchase is confirmed, or not, they are asked if they would like to buy anything else. If yes, then they will go through he same process, otherwise they will be thanked and exited from the application.
 
 ![Customer Image](/readmeImages/customerImage.png)
 
-## Manager View
+### Manager View
 
 The manager application provides options for the user to:
     * View Products for Sale
@@ -56,7 +56,7 @@ If a manager selects `Add New Product`, it allows the manager to add a completel
 
 ![Manager Add Product](/readmeImages/managerAddProduct.png)
 
-## Supervisor View
+### Supervisor View
 The supervisor application will first will list a set of menu options:
    * View Product Sales by Department
    * Create New Department
@@ -82,7 +82,7 @@ If a supervisor selects ‘Create New Department’, it allows the manager to ad
 * refactor code to have a cart with all products at checkout instead of completing order for each product
 * Any other awesome ideas
 
-## Contributors
+### Contributors
 
 Dominic Gonzalez-Padron
 
