@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+var Table = require('cli-table');
 const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -15,18 +16,24 @@ function showProducts() {
     // show the products available in the database
     connection.query(
         'SELECT * FROM `products`', function (err, results) {
-            for (i = 0; i < results.length; i++) {
-                // only if in stock....
-                if (results[i].stock_quantity > 0) {
-                    console.log(
-                        `ID: ${results[i].item_id}, Item: ${results[i].product_name}, Price: $${results[i].price}, `
-                    )
-                }
-            }
+            displayTable(results);
             // ask what product the customer would like to purchase
             buySomething(results);
         });
 }
+function displayTable(results) {
+    var table = new Table({
+        head: ['Item ID', 'Product Name', 'Price', 'Stock']
+        , colWidths: [10, 30, 10, 10]
+    });
+    for (i = 0; i < results.length; i++) {
+        table.push(
+            [results[i].item_id, results[i].product_name, results[i].price]
+        );
+    }
+    console.log(table.toString());
+}
+
 function buySomething(results) {
     inquirer.prompt([
         {
@@ -93,6 +100,7 @@ function confirmPurchase() {
             console.log('=====================================');
             // update stock in database
             updateStock();
+            updateSales();
             nextOrder();
         }
         else {
@@ -117,6 +125,16 @@ function updateStock() {
         }
     )
 }
+function updateSales() {
+    connection.query(
+        'UPDATE products SET product_sales = product_sales + ' + totalCost + ' WHERE item_id = ' + chosenItem.item_id,
+        (err) => {
+            if (err) { console.log(err); }
+        }
+    )
+}
+
+
 function nextOrder() {
     inquirer.prompt([
         {
