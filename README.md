@@ -75,7 +75,7 @@ If a supervisor selects ‘Create New Department’, it allows the manager to ad
 * MySQL
 * JavaScript
 
-##CONTRIBUTING
+## CONTRIBUTING
 
 * GUI interface
 * user authentication
